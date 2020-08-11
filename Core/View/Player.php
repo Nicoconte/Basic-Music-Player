@@ -33,7 +33,7 @@
 			</blockquote>
 		</div>
 		<div class="player-volume h-100 d-flex flex-row justify-content-center align-items-center">
-			<input type="range" name='slider' min="0" max="100" value='100' id='slider'>
+			<input type="range" name='slider' min="1" max="100" value='100' id='slider'>
 		</div>
 	</div>
 </div>
