@@ -1,6 +1,6 @@
 # Music-Player
 
-* Music player for all es un reproductor de musica super basico pero funcional!
+# "Music player for all" es un reproductor de musica super basico pero funcional!
 
 Demo: https://musicplayerforall.000webhostapp.com/
 
