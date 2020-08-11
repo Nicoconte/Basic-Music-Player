@@ -1,5 +1,5 @@
 <div class="player-container">
-	<div class="player-song-list">
+	<div class="player-song-list bg-dark">
 		<table class='table table-dark table-striped'>
 			<thead class='bg-info'>
 				<tr>
@@ -18,7 +18,8 @@
 				<button class='stop-song-bar btn btn-sm btn-danger text-white rounded-circle d-none'><i class="fa fa-pause"></i></button>
 				<button class='play-song-bar btn btn-sm btn-success text-white rounded-circle'><i class="fa fa-play-circle"></i></button>
 				<button class='loop-song btn btn-sm btn-info text-white rounded-circle ml-2'><i class='fa fa-repeat'></i></button>
-				
+				<button class='mute-song btn btn-sm btn-warning text-white rounded-circle ml-2'><i class='fa fa-ban'></i></button>
+
 				<button class='next-song btn btn-sm btn-info text-white ml-5'><i class="fa fa-forward"></i></button>
 			</span>			 
 		</div>
@@ -32,7 +33,7 @@
 			</blockquote>
 		</div>
 		<div class="player-volume h-100 d-flex flex-row justify-content-center align-items-center">
-			<input type="range" name='slider' min="1" max="100" value='100' id='slider'>
+			<input type="range" name='slider' min="0" max="100" value='100' id='slider'>
 		</div>
 	</div>
 </div>

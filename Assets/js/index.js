@@ -1,6 +1,5 @@
 var audio = new Audio();
 var songName = "";
-var intervalID = '';
 var loopIsActive = false;
 var songList = [];
 
@@ -46,8 +45,6 @@ const playSong = () => {
 
 		window.document.title = song;
 
-		clearInterval(intervalID);
-
 		audio.pause();
 		audio = new Audio("Core/Upload/" + song);
 		audio.preload;
@@ -55,6 +52,7 @@ const playSong = () => {
 
 
 		loopAudio();
+		mutedSong();
 		getSongDetails();
 		getCurrentVolume();
 
@@ -70,8 +68,6 @@ const nextSongEvent = () => {
 		audio.pause();
 		delete audio;
 
-		clearInterval(intervalID);
-
 		let songPosition = songList.indexOf(songName) + 1;
 		let nextSong = "";
 		
@@ -86,6 +82,7 @@ const nextSongEvent = () => {
 
 
 		loopAudio();
+		mutedSong();
 		getSongDetails();
 		getCurrentVolume();
 
@@ -101,8 +98,6 @@ const previousSongEvent = () => {
 		audio.pause();
 		delete audio;
 
-		clearInterval(intervalID);
-
 		let songPosition = songList.indexOf(songName) - 1;
 		let previousSong = "";
 		
@@ -117,6 +112,7 @@ const previousSongEvent = () => {
 		audio.play();
 
 		loopAudio();
+		mutedSong();
 		getSongDetails();
 		getCurrentVolume();
 
@@ -137,13 +133,12 @@ const nextSongAutomatically = () => {
 	audio.pause();
 	delete audio;
 
-	clearInterval(intervalID);
-
 	audio = new Audio("Core/Upload/" + nextSong);
 	audio.preload;
 	audio.play();
 
 	loopAudio();
+	mutedSong();
 	getSongDetails();
 	getCurrentVolume();
 
@@ -202,6 +197,23 @@ const loopAudio = () => {
 		audio.loop = false;
 		whenTheSongEnd();
 	}	
+}
+
+const mutedSong = () => {
+	let muteOption = 0;
+
+	$(".mute-song").click(function() {
+		if(muteOption % 2 === 0 ) {
+			audio.volume = 0.0;
+			$(".mute-song").addClass("bg-danger");
+		} else {
+			audio.volume = localStorage.getItem('volume');
+			$(".mute-song").removeClass("bg-danger");
+		}
+
+		muteOption++;
+
+	});
 }
 
 const changeBarButton = () => {
