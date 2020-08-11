@@ -1,6 +1,5 @@
 var audio = new Audio();
 var songName = "";
-var intervalID = '';
 var loopIsActive = false;
 var songList = [];
 
@@ -46,8 +45,6 @@ const playSong = () => {
 
 		window.document.title = song;
 
-		clearInterval(intervalID);
-
 		audio.pause();
 		audio = new Audio("Core/Upload/" + song);
 		audio.preload;
@@ -69,8 +66,6 @@ const nextSongEvent = () => {
 		
 		audio.pause();
 		delete audio;
-
-		clearInterval(intervalID);
 
 		let songPosition = songList.indexOf(songName) + 1;
 		let nextSong = "";
@@ -100,8 +95,6 @@ const previousSongEvent = () => {
 		
 		audio.pause();
 		delete audio;
-
-		clearInterval(intervalID);
 
 		let songPosition = songList.indexOf(songName) - 1;
 		let previousSong = "";
@@ -136,8 +129,6 @@ const nextSongAutomatically = () => {
 	
 	audio.pause();
 	delete audio;
-
-	clearInterval(intervalID);
 
 	audio = new Audio("Core/Upload/" + nextSong);
 	audio.preload;
