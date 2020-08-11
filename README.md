@@ -6,7 +6,7 @@ Demo: https://musicplayerforall.000webhostapp.com/
 
 Para comenzar a utilizar la aplicacion de forma local debera:
 - Instalar XAMPP 
-- Crear una Upload dentro de Core. Una vez creada, colocar las canciones que usted desee reproducir
+- Crear una carpeta llamada Upload dentro de Core. Una vez creada, colocar las canciones que usted desee reproducir
 
 Tecnogolias:
 - PHP -> Lector de archivos
