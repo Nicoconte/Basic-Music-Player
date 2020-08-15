@@ -5,6 +5,10 @@ body{
 	height:auto;
 }
 
+.table-dark td input{
+	width:50%;
+}
+
 .player-container {
 	width:100%;
 	height:654px;
@@ -15,12 +19,12 @@ body{
 	height:85%;
 	overflow-y: scroll;
 	overflow-x: hidden; 
-	scrollbar-width: none;
+	/*scrollbar-width:none;*/
 }
 
 
 .player-song-list::-webkit-scrollbar{
-	display:none;
+	background-color:black;
 }
 
 .player-song-options{
@@ -47,7 +51,7 @@ body{
   outline: none;
   -webkit-transition: .2s;
   transition: opacity .2s;
-  margin-top:28px;
+  margin-top:20px;
 }
 
 #slider::-webkit-slider-thumb {
@@ -89,10 +93,21 @@ body{
 	.player-options, .player-volume, .player-details{
 		width:100%;
 	}
+
+
+	.table-dark td input{
+		width:80%;
+	}
 	
 	#slider{
 		margin-top:0px;
 		margin-bottom: 5px;
 	}
+}
 
+
+@media(min-width: 1500px) and (max-width: 1920px) {
+	.player-container{
+		height:966px;
+	}
 }
